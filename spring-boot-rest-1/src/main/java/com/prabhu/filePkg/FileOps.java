@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class File1 {
+public class FileOps {
 
 	public static void main(String[] args) {
         File f0 = new File("src/main/resources/file.txt");
@@ -66,20 +66,7 @@ public class File1 {
         
         System.out.println("--------------");
 
-        try {  
-            // Create f1 object of the file to read data  
-            File f2 = new File("src/main/resources/1234567890Payload.xml");    
-            Scanner dataReader = new Scanner(f2);  
-            while (dataReader.hasNextLine()) {  
-                String fileData = dataReader.nextLine();  
-                System.out.println(fileData);  
-            }  
-            dataReader.close();  
-        } catch (FileNotFoundException exception) {  
-            System.out.println("Unexcpected error occurred!");  
-            exception.printStackTrace();  
-        }  
-        System.out.println("--------------");
+
 
         File f3 = new File("src/main/resources/file.txt");   
         if (f3.delete()) {   

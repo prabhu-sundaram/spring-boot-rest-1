@@ -49,7 +49,7 @@ public class WriteStringToFile {
 		String completed="";
 		
 		//String	fileLocation = "packages/DMAcquisition/config/"+CorrelationId+"Payload.xml";
-		String	fileLocation = "F:\\eclipse-ws\\quickstart2\\src\\test\\resources\\"+CorrelationId+"Payload.xml";
+		String	fileLocation = "src/main/resources/"+CorrelationId+"Payload.xml";
 		
 		
 		File file = new File(fileLocation);

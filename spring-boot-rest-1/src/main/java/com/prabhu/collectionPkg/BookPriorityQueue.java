@@ -3,6 +3,8 @@ package com.prabhu.collectionPkg;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+import com.prabhu.beans.Book;
+
 public class BookPriorityQueue {
 
 	public static void main(String[] args) {
@@ -18,12 +20,12 @@ public class BookPriorityQueue {
 		    System.out.println("Traversing the queue elements:");  
 		    //Traversing queue elements  
 		    for(Book b:queue){  
-		    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+		    	System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
 		    }  
 		    queue.remove();  
 		    System.out.println("After removing one book record:");  
 		    for(Book b:queue){  
-		        System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+		    	System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
 		        }  
 	}
 

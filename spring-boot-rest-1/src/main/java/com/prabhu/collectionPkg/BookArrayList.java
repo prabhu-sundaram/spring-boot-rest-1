@@ -2,6 +2,8 @@ package com.prabhu.collectionPkg;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.prabhu.beans.Book;
 public class BookArrayList {  
 public static void main(String[] args) {  
     //Creating list of Books  
@@ -16,7 +18,7 @@ public static void main(String[] args) {
     list.add(b3);  
     //Traversing list  
     for(Book b:list){  
-    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+    System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
     }  
 }  
 }  

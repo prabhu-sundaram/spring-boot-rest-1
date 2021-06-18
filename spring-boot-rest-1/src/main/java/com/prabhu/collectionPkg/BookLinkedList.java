@@ -3,6 +3,8 @@ package com.prabhu.collectionPkg;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.prabhu.beans.Book;
+
 public class BookLinkedList {
 
 	public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class BookLinkedList {
 	    list.add(b3);  
 	    //Traversing list  
 	    for(Book b:list){  
-	    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+	    	System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());  
 	    }  
 	}
 

@@ -3,6 +3,8 @@ package com.prabhu.collectionPkg;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+import com.prabhu.beans.Book;
+
 public class BookArrayDeque {
 
 	public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class BookArrayDeque {
 		    set.add(b3);    
 		    //Traversing ArrayDeque  
 		    for(Book b:set){    
-		    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);    
+		    System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());    
 		    }    
 
 	}

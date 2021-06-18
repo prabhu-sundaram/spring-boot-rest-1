@@ -3,6 +3,8 @@ package com.prabhu.collectionPkg;
 import java.util.EnumMap;
 import java.util.Map;
 
+import com.prabhu.beans.Book;
+
 public class BookEnumMap {
 		// Creating enum  
 	    public enum Key{  
@@ -21,7 +23,7 @@ public class BookEnumMap {
 	    // Traversing EnumMap  
 	       for(Map.Entry<Key, Book> entry:map.entrySet()){      
 	            Book b=entry.getValue();    
-	            System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);     
+	            System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());    
 	        }  
 
 	}

@@ -1,4 +1,4 @@
-package com.prabhu.jackson3Example;
+package com.prabhu.beans;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

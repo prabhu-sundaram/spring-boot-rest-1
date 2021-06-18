@@ -7,11 +7,12 @@ import java.util.Set;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.prabhu.beans.Emp;
 
 public class StreamingWriteExample {
 
 	public static void main(String[] args) throws IOException {
-		Employee emp = JacksonObjectMapperExample.createEmployee();
+		Emp emp = JacksonWriteExample.createEmployee();
 
 		JsonGenerator jsonGenerator = new JsonFactory()
 				.createGenerator(new FileOutputStream("src/main/resources/stream_emp.txt"));

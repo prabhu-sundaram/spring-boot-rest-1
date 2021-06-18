@@ -1,9 +1,10 @@
-package com.prabhu.jackson2Example;
+package com.prabhu.jacksonExample;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.prabhu.beans.Car;
 
 public class CustomCarSerializerInvoke {
 

@@ -10,6 +10,8 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
+import com.prabhu.beans.Address;
+import com.prabhu.beans.Emp;
 
 public class StreamingReadExample {
 
@@ -19,7 +21,7 @@ public class StreamingReadExample {
 		JsonParser jsonParser = new JsonFactory().createParser(new File("src/main/resources/employee.txt"));
 		
 		//loop through the tokens
-		Employee emp = new Employee();
+		Emp emp = new Emp();
 		Address address = new Address();
 		emp.setAddress(address);
 		emp.setCities(new ArrayList<String>());
@@ -41,7 +43,7 @@ public class StreamingReadExample {
 		System.out.println("Employee Object\n\n"+emp);
 	}
 
-	private static void parseJSON(JsonParser jsonParser, Employee emp,
+	private static void parseJSON(JsonParser jsonParser, Emp emp,
 			List<Long> phoneNums, boolean insidePropertiesObj) throws JsonParseException, IOException {
 		
 		//loop through the JsonTokens

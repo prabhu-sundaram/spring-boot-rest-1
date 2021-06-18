@@ -2,6 +2,8 @@ package com.prabhu.collectionPkg;
 
 import java.util.LinkedHashSet;
 
+import com.prabhu.beans.Book;
+
 public class BookLinkedHashSet {
 
 	public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class BookLinkedHashSet {
 	    hs.add(b4);
 	    //Traversing hash table  
 	    for(Book b:hs){  
-	    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+	    	System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
 	    }  
 
 	}

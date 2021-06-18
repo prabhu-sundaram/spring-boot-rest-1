@@ -1,10 +1,10 @@
-package com.prabhu.jacksonExample;
+package com.prabhu.beans;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class Employee {
+public class Emp {
 
 	private int id;
 	private String name;

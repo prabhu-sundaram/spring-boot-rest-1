@@ -1,4 +1,4 @@
-package com.prabhu.jacksonExample;
+package com.prabhu.beans;
 
 public class Address {
 	

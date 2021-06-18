@@ -1,4 +1,4 @@
-package com.prabhu.jackson2Example;
+package com.prabhu.jacksonExample;
 
 import java.io.IOException;
 
@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.prabhu.beans.Car;
 
 public class CustomCarDeserializerInvoke {
 

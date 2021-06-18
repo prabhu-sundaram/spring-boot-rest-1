@@ -1,4 +1,4 @@
-package com.prabhu.jackson2Example;
+package com.prabhu.beans;
 
 import java.util.Date;
 

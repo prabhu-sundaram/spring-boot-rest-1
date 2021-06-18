@@ -2,6 +2,8 @@ package com.prabhu.collectionPkg;
 
 import java.util.HashSet;
 
+import com.prabhu.beans.Book;
+
 public class BookHashSet {
 
 	public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class BookHashSet {
 		    set.add(b3);  
 		    //Traversing HashSet  
 		    for(Book b:set){  
-		    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+		    	System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
 		    }  
 
 	}

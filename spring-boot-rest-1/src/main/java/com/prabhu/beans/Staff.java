@@ -1,4 +1,4 @@
-package com.prabhu.jackson3Example;
+package com.prabhu.beans;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -9,15 +9,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-@JsonInclude(JsonInclude.Include.NON_NULL) 
-@JsonIgnoreProperties({"salary", "position"})
+//@JsonInclude(JsonInclude.Include.NON_NULL) 
+//@JsonIgnoreProperties({"salary", "position"})
 public class Staff {
 
     private String name;
     private int age;
     private String[] position;              //  Array
     private List<String> skills;            //  List
-    @JsonIgnore
+    //@JsonIgnore
     private Map<String, BigDecimal> salary; //  Map
 	public String getName() {
 		return name;

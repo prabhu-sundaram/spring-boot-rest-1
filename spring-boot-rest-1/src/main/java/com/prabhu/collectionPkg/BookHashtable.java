@@ -3,6 +3,8 @@ package com.prabhu.collectionPkg;
 import java.util.Hashtable;
 import java.util.Map;
 
+import com.prabhu.beans.Book;
+
 public class BookHashtable {
 
 	public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class BookHashtable {
 	        int key=entry.getKey();  
 	        Book b=entry.getValue();  
 	        System.out.println(key+" Details:");  
-	        System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);   
+	        System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
 	    }    
 
 	}

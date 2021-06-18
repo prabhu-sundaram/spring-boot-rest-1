@@ -1,4 +1,4 @@
-package com.prabhu.jackson2Example;
+package com.prabhu.jacksonExample;
 
 import java.io.IOException;
 
@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.prabhu.beans.Car;
 
 public class CustomCarDeserializer extends StdDeserializer<Car> {
     

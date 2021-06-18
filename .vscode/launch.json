@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringBootRest1Application<spring-boot-rest-1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.prabhu.server.main.SpringBootRest1Application",
+            "projectName": "spring-boot-rest-1",
+            "args": ""
+        }
+    ]
+}

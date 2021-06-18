@@ -3,6 +3,8 @@ package com.prabhu.collectionPkg;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.prabhu.beans.Book;
+
 public class BookTreeSet {
 
 	public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class BookTreeSet {
 	    set.add(b3);  
 	    //Traversing TreeSet  
 	    for(Book b:set){  
-	    System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);  
+	    	System.out.println(b.getId()+" "+b.getName()+" "+b.getAuthor()+" "+b.getPublisher()+" "+b.getQuantity());
 	    }  
 
 	}

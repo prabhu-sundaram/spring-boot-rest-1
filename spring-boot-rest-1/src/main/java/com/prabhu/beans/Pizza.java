@@ -1,4 +1,4 @@
-package com.prabhu.enumSample;
+package com.prabhu.beans;
 
 public class Pizza {
 	 private PizzaStatus status;

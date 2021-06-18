@@ -1,6 +1,6 @@
-package com.prabhu.streamExample;
+package com.prabhu.beans;
 
-class Product{  
+public class Product{  
     int id;  
     String name;  
     float price;  

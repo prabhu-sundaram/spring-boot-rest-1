@@ -1,15 +1,16 @@
 package com.prabhu.comparatorExample;
 
 import java.util.Comparator;
+import com.prabhu.beans.Student33;
 
 class AgeComparator implements Comparator{  
 public int compare(Object o1,Object o2){  
-Student s1=(Student)o1;  
-Student s2=(Student)o2;  
+Student33 s1=(Student33)o1;  
+Student33 s2=(Student33)o2;  
   
-if(s1.age==s2.age)  
+if(s1.getAge()==s2.getAge())  
 return 0;  
-else if(s1.age>s2.age)  
+else if(s1.getAge()>s2.getAge())  
 return 1;  
 else  
 return -1;  

@@ -1,10 +1,10 @@
-package com.prabhu.Comparator8;
+package com.prabhu.beans;
 
-class Student {
+public class Student33 {
 	  int rollno;    
-	   String name;    
+	  String name;    
 	  int age;    
-	    Student(int rollno,String name,int age){    
+	    public Student33(int rollno,String name,int age){    
 	    this.rollno=rollno;    
 	    this.name=name;    
 	    this.age=age;    

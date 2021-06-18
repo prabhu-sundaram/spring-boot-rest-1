@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.prabhu.beans.Product;
+
 public class StreamExample {
 
 	public static void main(String[] args) {
@@ -49,7 +51,7 @@ public class StreamExample {
         
 	       // count number of products based on the filter  
 	        long count2 = productsList.stream()  
-	                    .filter(product->product.price<30000)  
+	                    .filter(product->product.getPrice()<30000)  
 	                    .count();  
 	        System.out.println("count2:"+count2);  
 	        
@@ -102,21 +104,21 @@ public class StreamExample {
         for(Product product: productsList){  
               
             // filtering data of list  
-            if(product.price<30000){  
-                productPriceList.add(product.price);    // adding price to a productPriceList  
+            if(product.getPrice()<30000){  
+                productPriceList.add(product.getPrice());    // adding price to a productPriceList  
             }  
         }  
         System.out.println("productPriceList:"+productPriceList);   // displaying data  
         
         List<Float> productPriceList2 =productsList.stream()  
-                .filter(p -> p.price > 30000)// filtering data  
-                .map(p->p.price)        // fetching price  
+                .filter(p -> p.getPrice() > 30000)// filtering data  
+                .map(p->p.getPrice())        // fetching price  
                 .collect(Collectors.toList()); // collecting as list  
         System.out.println("productPriceList2:"+productPriceList2);  
 
         productsList.stream()  
-        .filter(product -> product.price == 30000)  
-        .forEach(product -> System.out.println(product.name));    
+        .filter(product -> product.getPrice() == 30000)  
+        .forEach(product -> System.out.println(product.getName()));    
         
 		//Mapping
 		System.out.println("---------------");
@@ -148,13 +150,13 @@ public class StreamExample {
 		
 		System.out.println("---------------");
         Float totalPrice = productsList.stream()  
-                .map(product->product.price)  
+                .map(product->product.getPrice())  
                 .reduce(0.0f,(sum, price)->sum+price);   // accumulating price  
     System.out.println("totalPrice:"+totalPrice);  
     
     System.out.println("---------------");   
     float totalPrice2 = productsList.stream()  
-            .map(product->product.price)  
+            .map(product->product.getPrice())  
             .reduce(0.0f,Float::sum);   // accumulating price, by referring method of Float class  
     System.out.println("totalPrice2:"+totalPrice2);  
     
@@ -167,20 +169,20 @@ public class StreamExample {
 		
         // Using Collectors's method to sum the prices.  
         double totalPrice3 = productsList.stream()  
-                        .collect(Collectors.summingDouble(product->product.price));  		
+                        .collect(Collectors.summingDouble(product->product.getPrice()));  		
         System.out.println("totalPrice3:"+totalPrice3);  
         
         // max() method to get max Product price   
         Product productA = productsList.stream()  
                         .max((product1, product2)->   
-                        product1.price > product2.price ? 1: -1).get();  
+                        product1.getPrice() > product2.getPrice() ? 1: -1).get();  
           
-        System.out.println("max:"+productA.price);  
+        System.out.println("max:"+productA.getPrice());  
         // min() method to get min Product price  
         Product productB = productsList.stream()  
                 .max((product1, product2)->   
-                product1.price < product2.price ? 1: -1).get();  
-        System.out.println("min:"+productB.price);          
+                product1.getPrice() < product2.getPrice() ? 1: -1).get();  
+        System.out.println("min:"+productB.getPrice());          
 		
 	}
 

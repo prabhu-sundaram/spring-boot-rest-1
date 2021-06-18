@@ -1,4 +1,4 @@
-package com.prabhu.enumSample3;
+package com.prabhu.beans;
 
 //import static org.junit.Assert.assertTrue;
 
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 //import org.junit.Test;
 
-public class Pizza {
+public class Pizza3 {
 
 	/*
 	 * private static EnumSet<PizzaStatus> undeliveredPizzaStatuses =

@@ -1,4 +1,4 @@
-package com.prabhu.collectionPkg;
+package com.prabhu.beans;
 
 class Student2{  
 	 int rollno;  

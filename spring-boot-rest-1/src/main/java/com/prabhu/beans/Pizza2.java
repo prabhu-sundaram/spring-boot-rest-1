@@ -1,10 +1,10 @@
-package com.prabhu.enumSample2;
+package com.prabhu.beans;
 
 //import static org.junit.Assert.assertTrue;
 
 //import org.junit.Test;
 
-public class Pizza {
+public class Pizza2 {
 
     private PizzaStatus status;
     public PizzaStatus getStatus() {
@@ -63,9 +63,9 @@ public class Pizza {
     
     //@Test
     public void givenPizaOrder_whenReady_thenDeliverable() {
-        Pizza testPz = new Pizza();
+        Pizza2 testPz = new Pizza2();
         //testPz.setStatus(Pizza.PizzaStatus.READY);
-        testPz.setStatus(Pizza.PizzaStatus.ORDERED);
+        testPz.setStatus(Pizza2.PizzaStatus.ORDERED);
         testPz.printTimeToDeliver();
         //assertTrue(testPz.isDeliverable());
         testPz.printTimeToDeliver();

@@ -1,13 +1,13 @@
-package com.prabhu.testAES;
+package com.prabhu.beans;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Student implements Serializable {
+public class Student4 implements Serializable {
     private String name;
     private int age;
 
-    public Student(String name, int age) {
+    public Student4(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -34,7 +34,7 @@ public class Student implements Serializable {
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        Student student = (Student) o;
-        return age == student.age && Objects.equals(name, student.name);
+        Student4 student4 = (Student4) o;
+        return age == student4.age && Objects.equals(name, student4.name);
     }
 }

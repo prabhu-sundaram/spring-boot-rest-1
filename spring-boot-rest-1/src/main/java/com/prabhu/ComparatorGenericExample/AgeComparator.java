@@ -1,11 +1,13 @@
 package com.prabhu.ComparatorGenericExample;
 
-import java.util.*;  
-class AgeComparator implements Comparator<Student>{  
-public int compare(Student s1,Student s2){  
-if(s1.age==s2.age)  
+import java.util.*;
+
+import com.prabhu.beans.Student33;  
+class AgeComparator implements Comparator<Student33>{  
+public int compare(Student33 s1,Student33 s2){  
+if(s1.getAge()==s2.getAge())  
 return 0;  
-else if(s1.age>s2.age)  
+else if(s1.getAge()>s2.getAge())  
 return 1;  
 else  
 return -1;  

@@ -1,6 +1,6 @@
 //-----------------------------------ae.gov.dm.PaymentGateway.dao.PaymentInitiationRequest.java-----------------------------------
 
-package com.prabhu.PaymentGateway;
+package com.prabhu.beans;
 
 import java.util.List;
 

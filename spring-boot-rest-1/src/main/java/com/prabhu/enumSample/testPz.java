@@ -1,5 +1,7 @@
 package com.prabhu.enumSample;
 
+import com.prabhu.beans.Pizza;
+
 public class testPz {
 
 	public static void main(String[] args) {

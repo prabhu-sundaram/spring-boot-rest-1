@@ -31,6 +31,8 @@ import javax.crypto.spec.SecretKeySpec;
 //import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 
+import com.prabhu.beans.Student4;
+
 public class AESUtil {
 
 	/*
@@ -232,13 +234,13 @@ public class AESUtil {
 	    InvalidAlgorithmParameterException, NoSuchPaddingException, IOException, 
 	    BadPaddingException, ClassNotFoundException {
 	    
-	    Student student = new Student("Baeldung", 20);
+	    Student4 student4 = new Student4("Baeldung", 20);
 	    SecretKey key = AESUtil.generateKey(128);
 	    IvParameterSpec ivParameterSpec = AESUtil.generateIv();
 	    String algorithm = "AES/CBC/PKCS5Padding";
 	    SealedObject sealedObject = AESUtil.encryptObject(
-	      algorithm, student, key, ivParameterSpec);
-	    Student object = (Student) AESUtil.decryptObject(
+	      algorithm, student4, key, ivParameterSpec);
+	    Student4 object = (Student4) AESUtil.decryptObject(
 	      algorithm, sealedObject, key, ivParameterSpec);
 	    //assertThat(student).isEqualToComparingFieldByField(object);
 	}	

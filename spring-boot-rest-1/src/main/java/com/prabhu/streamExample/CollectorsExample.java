@@ -15,6 +15,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import com.prabhu.beans.Product;
+
 public class CollectorsExample {
 
 	public static void main(String[] args) {
@@ -44,8 +46,8 @@ public class CollectorsExample {
         // Converting product List into Set  
         Set<Float> productPriceList =   
             productsList.stream()  
-            .filter(product->product.price < 30000)   // filter product on the base of price  
-            .map(product->product.price)  
+            .filter(product->product.getPrice() < 30000)   // filter product on the base of price  
+            .map(product->product.getPrice())  
             .collect(Collectors.toSet());   // collect it as Set(remove duplicate elements)  
         System.out.println("productPriceList:"+productPriceList);  
         
@@ -74,7 +76,7 @@ public class CollectorsExample {
         // Converting Product List into a Map  
         Map<Integer,String> productPriceMap =   
             productsList.stream()  
-                        .collect(Collectors.toMap(p->p.id, p->p.name));  
+                        .collect(Collectors.toMap(p->p.getId(), p->p.getName()));  
               
         System.out.println("productPriceMap:"+productPriceMap);  
         
@@ -136,7 +138,7 @@ public class CollectorsExample {
 		//Method Reference in stream
         List<Float> productPriceList2 =   
                 productsList.stream()  
-                            .filter(p -> p.price > 30000) // filtering data  
+                            .filter(p -> p.getPrice() > 30000) // filtering data  
                             .map(Product::getPrice)         // fetching price by referring getPrice method  
                             .collect(Collectors.toList());  // collecting as list  
         System.out.println(productPriceList2);  

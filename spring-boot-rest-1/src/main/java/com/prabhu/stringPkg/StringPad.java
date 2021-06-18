@@ -9,6 +9,7 @@ public class StringPad {
 	public static void main(String[] args) {
 		String inputString="123456";
 		int length=10;
+		
 		System.out.println("-------------StringBuilder-----------------");		
 
 	    if (inputString.length() >= length) {

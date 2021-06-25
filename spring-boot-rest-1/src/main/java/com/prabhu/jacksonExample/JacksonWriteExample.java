@@ -1,6 +1,7 @@
 package com.prabhu.jacksonExample;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.math.BigDecimal;
@@ -22,6 +23,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.prabhu.beans.Address;
 import com.prabhu.beans.Car;
+import com.prabhu.beans.Car2;
 import com.prabhu.beans.Emp;
 import com.prabhu.beans.Request;
 import com.prabhu.beans.Staff;
@@ -46,7 +48,7 @@ public class JacksonWriteExample {
 		
 		Staff2 s23 = new Staff2("prabhu",34);
 		String s23string = om.writeValueAsString(s23);
-		System.out.println("s23string:"+s23string);
+		System.out.println("Staff2 s23string:"+s23string);
 		
 		Staff ss = new Staff();
 		ss.setAge(34);
@@ -58,16 +60,61 @@ public class JacksonWriteExample {
 		Staff2 s22 = new Staff2();
 		s22.setAge(23);
 		String s22string = om.writeValueAsString(s22);
-		System.out.println("s22string:"+s22string);
+		System.out.println("Staff2 s22string:"+s22string);
 		
 		Staff2 s233 = new Staff2();
 		//s23.setAge(23);
 		String s233string = om.writeValueAsString(s233);
-		System.out.println("s233 string:"+s233string);		
+		System.out.println("Staff2 s233 string:"+s233string);		
 		
 		String s233stringPretty = om.writerWithDefaultPrettyPrinter().writeValueAsString(s233);
-		System.out.println("s233string Pretty:"+s233stringPretty);	
-			
+		System.out.println("Staff2 s233string Pretty:"+s233stringPretty);	
+
+	
+		
+		System.out.println("--------------------------");	
+		System.out.println("-------------HandlingDateFormats-------------");		
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+        Car car = new Car("yellow", "renault");
+		Request request = new Request(car,new Date());
+		
+		String carAsString = objectMapper.writeValueAsString(request);
+		System.out.println("carAsString:"+carAsString);
+		
+	
+		//Car2 car22 = new Car2("Toyato", 4, "Green", "Toyato", 1920, new Date(), true);
+		Car2 car22 = new Car2();
+		car22.setBrand("Toyato");
+		car22.setDoors(4);
+		car22.setColor("Green");
+		car22.setType("Toyato");
+		car22.setYear(2000);
+		car22.setDate(new Date());
+		car22.setStatus(true);
+		String car22AsString = objectMapper.writeValueAsString(car22);
+		System.out.println("car22AsString:"+car22AsString);
+		
+		
+		
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
+		objectMapper.setDateFormat(df);
+
+		String carAsString2 = objectMapper.writeValueAsString(request);
+		System.out.println("carAsString2:"+carAsString2);
+		// output: {"car":{"color":"yellow","type":"renault"},"datePurchased":"2016-07-03 11:43 AM CEST"}
+
+		DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
+		objectMapper.setDateFormat(df2);		
+		String car22AsString2 = objectMapper.writeValueAsString(car22);
+		System.out.println("car22AsString2:"+car22AsString2);
+		
+		
+		System.out.println("--------------------------");	
+		
+		System.out.println("--------------Java Object to JSON String------writeValue------");	
+		
 		Staff s1 = new Staff();
 		System.out.println("s1:"+s1.toString());
 		om.writeValue(new File("src/main/resources/staff.json"), s1);
@@ -77,27 +124,8 @@ public class JacksonWriteExample {
 		String carAsString11 = om.writeValueAsString(car11);
 		System.out.println("carAsString11:"+carAsString11);
 		System.out.println("car toString11:"+car11.toString());
-
-		System.out.println("--------------------------");	
-		System.out.println("-------------HandlingDateFormats-------------");		
 		
-        Car car = new Car("yellow", "renault");
-		Request request = new Request(car,new Date());
-		
-		String carAsString2 = om.writeValueAsString(request);
-		System.out.println("carAsString2:"+carAsString2);
-		
-		ObjectMapper objectMapper = new ObjectMapper();
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
-		objectMapper.setDateFormat(df);
-
-		String carAsString = objectMapper.writeValueAsString(request);
-		System.out.println("carAsString:"+carAsString);
-		
-		// output: {"car":{"color":"yellow","type":"renault"},"datePurchased":"2016-07-03 11:43 AM CEST"}		
-		System.out.println("--------------------------");	
-		
-		System.out.println("--------------Java Object to JSON String------writeValue------");	
+		om.writeValue(new FileOutputStream("src/main/resources/car11-2.json"), car11);
 		
 		ObjectMapper om2 = new ObjectMapper();
 
@@ -110,6 +138,11 @@ public class JacksonWriteExample {
 		StringWriter stringEmp = new StringWriter();
 		om2.writeValue(stringEmp, emp1);
 		System.out.println("INDENT_OUTPUT Employee JSON is\n"+stringEmp);
+		System.out.println("--------------------------");	
+		
+		System.out.println("--------------Java Object to JSON String------writeValueAsBytes------");	
+		
+		
 		
 		System.out.println("--------------------------");	
 		System.out.println("------------EditJSONDocument--------------");	

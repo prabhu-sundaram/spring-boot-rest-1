@@ -9,15 +9,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-//@JsonInclude(JsonInclude.Include.NON_NULL) 
-//@JsonIgnoreProperties({"salary", "position"})
+
 public class Staff {
 
     private String name;
     private int age;
     private String[] position;              //  Array
     private List<String> skills;            //  List
-    //@JsonIgnore
+    
     private Map<String, BigDecimal> salary; //  Map
 	public String getName() {
 		return name;

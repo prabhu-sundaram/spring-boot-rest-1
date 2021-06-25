@@ -1,4 +1,4 @@
-package com.prabhu.log4j2Example;
+package com.prabhu.log4jExample;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

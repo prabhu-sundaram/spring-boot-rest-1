@@ -11,11 +11,40 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import com.prabhu.beans.Address;
+import com.prabhu.beans.Car2;
 import com.prabhu.beans.Emp;
 
-public class StreamingReadExample {
+public class JsonParserExample {
 
 	public static void main(String[] args) throws JsonParseException, IOException {
+		String carJson =
+		        "{ \"brand\" : \"Mercedes\", \"doors\" : 5 }";
+
+		JsonFactory factory = new JsonFactory();
+		JsonParser  parser  = factory.createParser(carJson);
+
+		Car2 car = new Car2();
+		while(!parser.isClosed()){
+		    JsonToken jsonToken = parser.nextToken();
+
+		    if(JsonToken.FIELD_NAME.equals(jsonToken)){
+		        String fieldName = parser.getCurrentName();
+		        System.out.println(fieldName);
+
+		        jsonToken = parser.nextToken();
+
+		        if("brand".equals(fieldName)){
+		            car.setBrand(parser.getValueAsString());
+		        } else if ("doors".equals(fieldName)){
+		            car.setDoors(parser.getValueAsInt());
+		        }
+		    }
+		}
+
+		System.out.println("car.brand = " + car.getBrand());
+		System.out.println("car.doors = " + car.getDoors());
+		
+		System.out.println("--------------------------");	
 		
 		//create JsonParser object
 		JsonParser jsonParser = new JsonFactory().createParser(new File("src/main/resources/employee.txt"));
@@ -40,9 +69,9 @@ public class StreamingReadExample {
 		
 		jsonParser.close();
 		//print employee object
-		System.out.println("Employee Object\n\n"+emp);
+		System.out.println("Employee Object\n\n"+emp);		
 	}
-
+	
 	private static void parseJSON(JsonParser jsonParser, Emp emp,
 			List<Long> phoneNums, boolean insidePropertiesObj) throws JsonParseException, IOException {
 		
@@ -95,6 +124,4 @@ public class StreamingReadExample {
 			}
 		}
 	}
-
 }
-

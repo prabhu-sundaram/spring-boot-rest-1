@@ -1,17 +1,34 @@
 package com.prabhu.jacksonExample;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Set;
 
+import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.prabhu.beans.Emp;
 
-public class StreamingWriteExample {
+public class JsonGeneratorExample {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		
+		JsonFactory factory = new JsonFactory();
+
+		JsonGenerator generator = factory.createGenerator(
+		    new File("src/main/resources/outputJSONGen.json"), JsonEncoding.UTF8);
+
+		generator.writeStartObject();
+		generator.writeStringField("brand", "Mercedes");
+		generator.writeNumberField("doors", 5);
+		generator.writeEndObject();
+
+		generator.close();		
+		System.out.println("--------------------------");	
+		
 		Emp emp = JacksonWriteExample.createEmployee();
 
 		JsonGenerator jsonGenerator = new JsonFactory()
@@ -53,7 +70,7 @@ public class StreamingWriteExample {
 		
 		jsonGenerator.flush();
 		jsonGenerator.close();
+
 	}
 
 }
-

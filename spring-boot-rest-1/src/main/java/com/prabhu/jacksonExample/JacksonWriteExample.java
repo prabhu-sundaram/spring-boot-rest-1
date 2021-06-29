@@ -21,10 +21,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.prabhu.beans.Address;
 import com.prabhu.beans.Car;
 import com.prabhu.beans.Car2;
 import com.prabhu.beans.Emp;
+import com.prabhu.beans.Event;
+import com.prabhu.beans.Event2;
 import com.prabhu.beans.Request;
 import com.prabhu.beans.Staff;
 import com.prabhu.beans.Staff2;
@@ -73,45 +76,7 @@ public class JacksonWriteExample {
 	
 		
 		System.out.println("--------------------------");	
-		System.out.println("-------------HandlingDateFormats-------------");		
-		
-		ObjectMapper objectMapper = new ObjectMapper();
-		
-        Car car = new Car("yellow", "renault");
-		Request request = new Request(car,new Date());
-		
-		String carAsString = objectMapper.writeValueAsString(request);
-		System.out.println("carAsString:"+carAsString);
-		
-	
-		//Car2 car22 = new Car2("Toyato", 4, "Green", "Toyato", 1920, new Date(), true);
-		Car2 car22 = new Car2();
-		car22.setBrand("Toyato");
-		car22.setDoors(4);
-		car22.setColor("Green");
-		car22.setType("Toyato");
-		car22.setYear(2000);
-		car22.setDate(new Date());
-		car22.setStatus(true);
-		String car22AsString = objectMapper.writeValueAsString(car22);
-		System.out.println("car22AsString:"+car22AsString);
-		
-		
-		
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm a z");
-		objectMapper.setDateFormat(df);
 
-		String carAsString2 = objectMapper.writeValueAsString(request);
-		System.out.println("carAsString2:"+carAsString2);
-		// output: {"car":{"color":"yellow","type":"renault"},"datePurchased":"2016-07-03 11:43 AM CEST"}
-
-		DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
-		objectMapper.setDateFormat(df2);		
-		String car22AsString2 = objectMapper.writeValueAsString(car22);
-		System.out.println("car22AsString2:"+car22AsString2);
-		
-		
-		System.out.println("--------------------------");	
 		
 		System.out.println("--------------Java Object to JSON String------writeValue------");	
 		
@@ -159,6 +124,8 @@ public class JacksonWriteExample {
 		//remove existing key
 		((ObjectNode) rootNode).remove("role");
 		((ObjectNode) rootNode).remove("properties");
+		
+		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.writeValue(new File("src/main/resources/updated_emp.txt"), rootNode);		
 		objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/main/resources/updated_emp_pretty.txt"), rootNode);	
 

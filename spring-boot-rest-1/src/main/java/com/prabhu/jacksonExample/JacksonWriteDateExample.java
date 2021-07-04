@@ -2,12 +2,14 @@ package com.prabhu.jacksonExample;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.prabhu.beans.Car;
 import com.prabhu.beans.Car2;
 import com.prabhu.beans.Event;
@@ -80,6 +82,22 @@ public class JacksonWriteDateExample {
 		System.out.println("event2String:"+event2String);
 
 		System.out.println("--------------------------");	
+	    LocalDateTime date = LocalDateTime.of(2014, 12, 20, 2, 30);
+
+	    ObjectMapper mapper = new ObjectMapper();
+	    mapper.registerModule(new JavaTimeModule());
+	    mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+	    String result2 = mapper.writeValueAsString(date);
+	    System.out.println("result2:"+result2);	
+		System.out.println("--------------------------");	
+
+	    Event2 event22 = new Event2("party", new Date(), date);
+
+	    String result3 = mapper.writeValueAsString(event22);
+	    System.out.println("result3:"+result3);	
+
+	    
 
 	}
 

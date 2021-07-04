@@ -2,6 +2,9 @@ package com.prabhu.beans;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.prabhu.jacksonExample.CustomDateDeserializer;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

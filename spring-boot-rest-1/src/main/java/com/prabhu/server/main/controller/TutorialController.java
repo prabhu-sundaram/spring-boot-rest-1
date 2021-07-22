@@ -1,4 +1,4 @@
-package com.prabhu.controllers;
+package com.prabhu.server.main.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.prabhu.beans.Tutorial;
-import com.prabhu.repository.TutorialRepository;
+import com.prabhu.server.main.model.Tutorial;
+import com.prabhu.server.main.repository.TutorialRepository;
 
 @CrossOrigin(origins = "http://localhost:8083")
 @RestController

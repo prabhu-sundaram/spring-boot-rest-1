@@ -1,4 +1,4 @@
-package com.prabhu.example;
+package com.prabhu.jacksonExample;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,7 +10,7 @@ import com.prabhu.beans.*;
 //import com.prabhu.jacksonExample.Employee;
 
 
-public class Example {
+public class JacksonWriteExample2 {
 
 	public static void main(String[] args) throws JsonProcessingException {
 		

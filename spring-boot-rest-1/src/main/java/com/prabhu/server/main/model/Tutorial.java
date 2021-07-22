@@ -1,4 +1,4 @@
-package com.prabhu.beans;
+package com.prabhu.server.main.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

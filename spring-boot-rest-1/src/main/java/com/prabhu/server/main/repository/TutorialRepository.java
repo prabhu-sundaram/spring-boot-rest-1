@@ -1,10 +1,11 @@
-package com.prabhu.repository;
+package com.prabhu.server.main.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.prabhu.beans.Tutorial;
+import com.prabhu.server.main.model.Tutorial;
 
 public interface TutorialRepository extends JpaRepository<Tutorial, Long> {
 	List<Tutorial> findByPublished(boolean published);

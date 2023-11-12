@@ -22,7 +22,8 @@ public class JDBCExample {
 
         // auto close connection
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:oracle:thin:@devmdxdb01:1522:DMMENDIX12D", "MONTAJI_DEV", "MONTAJI_DEV")) {
+               // "jdbc:oracle:thin:@devmdxdb01:1522:DMMENDIX12D", "MONTAJI_DEV", "MONTAJI_DEV")) {
+        	"jdbc:oracle:thin:@localhost:1521:ORCL", "user1", "user1")) {
 
             if (conn != null) {
                 System.out.println("Connected to the database!");

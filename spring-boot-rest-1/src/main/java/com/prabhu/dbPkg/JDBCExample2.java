@@ -19,7 +19,8 @@ public class JDBCExample2 {
 
         // auto close connection and preparedStatement
         try (Connection conn = DriverManager.getConnection(
-        		"jdbc:oracle:thin:@devmdxdb01:1522:DMMENDIX12D", "MONTAJI_DEV", "MONTAJI_DEV");
+        		//"jdbc:oracle:thin:@devmdxdb01:1522:DMMENDIX12D", "MONTAJI_DEV", "MONTAJI_DEV");
+        		"jdbc:oracle:thin:@localhost:1521:ORCL", "user1", "user1");
              PreparedStatement preparedStatement = conn.prepareStatement(SQL_SELECT)) {
 
             ResultSet resultSet = preparedStatement.executeQuery();

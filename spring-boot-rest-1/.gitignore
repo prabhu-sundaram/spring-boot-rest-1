@@ -6,10 +6,10 @@ target/
 
 ### STS ###
 .apt_generated
-#.classpath
+.classpath
 .factorypath
-#.project
-#.settings
+.project
+.settings
 .springBeans
 .sts4-cache
 
@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+###log###
+*.log
+*.gz
